@@ -92,3 +92,25 @@ for i in range(5):
     sum1 = sum1 +user_num
 average2 = sum1/num_values
 print("The average of your numbers is", average2)
+
+#Write program that makes user guess a number between 1 and 100 save number in variable called magic_number
+#If user guesses a number higher than secret number     if user guesses number lower than the secret number
+
+import random
+
+magic_number = random.randint(1,1000)
+try_count = 0
+while True:
+    user_guess = int(input("Guess the magic number!"))
+    if user_guess > magic_number:
+        print("Too high")
+        try_count += 1
+    elif user_guess < magic_number:
+        print("Too low")
+        try_count += 1
+    elif user_guess == magic_number:
+        print("You got it!")
+        break
+    if try_count == 7:
+        print(f"Try again! The magic number was {magic_number}")
+        break
